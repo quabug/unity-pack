@@ -15,4 +15,6 @@ runs:
   using: 'docker'
   image: 'Dockerfile'
   args:
-    - ${{ inputs.package-dir }} ${{ inputs.output-path }} ${{ inputs.project-dir }}
+    - ${{ inputs.package-dir }}
+    - ${{ inputs.output-path }}
+    - ${{ inputs.project-dir }}
