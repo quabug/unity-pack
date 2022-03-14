@@ -18,3 +18,6 @@ runs:
     - ${{ inputs.package-dir }}
     - ${{ inputs.output-path }}
     - ${{ inputs.project-dir }}
+branding:
+  icon: 'package'
+  color: 'gray-dark'
