@@ -1,23 +1,22 @@
-# Hello world docker action
+# UnityPack github action
 
-This action prints "Hello World" to the log or "Hello" + the name of a person to greet. To learn how this action was built, see "[Creating a Docker container action](https://help.github.com/en/articles/creating-a-docker-container-action)" in the GitHub Help documentation.
+Create an Unity Package from directory
 
 ## Inputs
+### `package-dir`
+**Required** directory path of unity package relative to unity project directory
 
-### `who-to-greet`
+### `output-path`
+path of .unitypackage file
 
-**Required** The name of the person to greet. Default `"World"`.
+### `project-dir`
+directory of unity project
 
-## Outputs
-
-### `time`
-
-The time we greeted you.
 
 ## Example usage
 
 ```yaml
-uses: actions/hello-world-docker-action@master
+uses: quabug/unity-pack@v1
 with:
-  who-to-greet: 'Mona the Octocat'
+  package-dir: 'Packages/com.quabug.graph-ext'
 ```

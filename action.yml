@@ -1,15 +1,18 @@
-name: 'Hello World'
-description: 'Greet someone and record the time'
+name: 'Unity Pack'
+description: 'Create an Unity Package from directory'
 inputs:
-  who-to-greet:  # id of input
-    description: 'Who to greet'
+  package-dir:
+    description: 'directory path of unity package relative to unity project directory'
     required: true
-    default: 'World'
-outputs:
-  time: # id of output
-    description: 'The time we greeted you'
+  project-dir:
+    description: 'directory of unity project'
+    required: false
+  output-path:
+    description: 'path of .unitypackage file'
+    required: false
+    default: 'output.unitypackage'
 runs:
   using: 'docker'
   image: 'Dockerfile'
   args:
-    - ${{ inputs.who-to-greet }}
+    - ${{ inputs.package-dir }} ${{ inputs.output-path }} ${{ inputs.project-dir }}
