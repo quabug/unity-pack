@@ -7,6 +7,8 @@ tmp_dir=`mktemp -d -t unitypackage-XXXXXXXX`
 
 [ ! -z $project_dir ] && cd $project_dir
 
+echo "create $output_path from $package_dir"
+
 function make_meta_directory() {
     meta_file=$1
     asset_file=${meta_file%.*}
