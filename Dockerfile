@@ -6,7 +6,6 @@ COPY unity-pack.sh /unity-pack.sh
 
 USER root
 RUN chmod +x /unity-pack.sh
-USER yq
 
 # Code file to execute when the docker container starts up (`entrypoint.sh`)
 ENTRYPOINT ["/unity-pack.sh"]
