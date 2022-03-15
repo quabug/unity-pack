@@ -1,4 +1,4 @@
-#! /bin/sh
+#! /bin/bash
 
 package_dir=$1
 output_path=${2:-'output.unitypackage'}
@@ -26,7 +26,7 @@ function make_meta_directory() {
     fi
 }
 
-for meta_file in `find $package_dir -name "*.meta"`; do make_meta_directory "${meta_file}"; done
+find $package_dir -name "*.meta" -print0 | while IFS= read -r -d '' file; do make_meta_directory "$file"; done
 
 cd $tmp_dir
 tar -czvf archtemp.tar.gz * > /dev/null
