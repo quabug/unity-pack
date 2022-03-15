@@ -1,4 +1,4 @@
-#! /bin/bash
+#! /bin/sh
 
 package_dir=$1
 output_path=${2:-'output.unitypackage'}
